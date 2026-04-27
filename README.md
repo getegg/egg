@@ -1,206 +1,269 @@
 # 🥚 Event Git Graph (EGG)
 
-> **A decentralized Git collaboration layer powered by Nostr**
+<p align="center">
+  <img src="https://img.shields.io/badge/status-experimental-orange" />
+  <img src="https://img.shields.io/badge/protocol-nostr-purple" />
+  <img src="https://img.shields.io/badge/license-MIT-green" />
+  <img src="https://img.shields.io/badge/decentralized-true-blue" />
+  <img src="https://img.shields.io/badge/self--hosted-yes-lightgrey" />
+</p>
+
+<p align="center">
+  <strong>A decentralized Git collaboration layer powered by events.</strong><br/>
+  <em>Your code. Your identity. Your infrastructure.</em>
+</p>
 
 ---
 
 ## 🚀 Overview
 
-**Event Git Graph (EGG)** is a decentralized infrastructure for software collaboration that combines:
+**Event Git Graph (EGG)** is a decentralized infrastructure for software development and collaboration.
 
-- Git (version control)
-- Nostr (identity and event distribution)
-- Pegg (lightweight static hosting layer)
+It combines:
 
-EGG reimagines platforms like GitHub by removing central servers and giving full control back to developers.
+- **Git** → distributed version control  
+- **Nostr** → identity and event distribution  
+- **Pegg** → lightweight static hosting layer  
 
-> **Your code. Your identity. Your infrastructure.**
+EGG reimagines platforms like GitHub by removing central servers and replacing them with a **protocol-driven ecosystem**.
+
+Instead of relying on a single platform, each developer becomes their own platform.
 
 ---
 
 ## 🌍 Vision
 
-EGG is not just a platform — it is a protocol-driven ecosystem.
+Modern development depends on centralized services. While Git is distributed, collaboration is not.
 
-Instead of relying on centralized services, each developer:
+EGG changes that.
 
-- Hosts their own repositories
-- Owns their identity via cryptographic keys
-- Publishes and interacts through distributed events
+> There is no central server.  
+> There is no global database.  
+> There is no authority controlling access.
 
-There is no central authority, no global database, and no single point of failure.
+Each developer:
+
+- Hosts their own repositories  
+- Owns their identity (via cryptographic keys)  
+- Publishes and consumes events in a distributed network  
 
 ---
 
 ## 🧠 Core Concept: Code as Events
 
-In EGG, every action becomes a signed event:
+EGG introduces a new paradigm:
 
-- Repository creation
-- Commits
-- Forks
-- Issues
-- Pull requests
-- Permissions
+> **All development actions are events.**
 
-These events are distributed through the Nostr network and form a **graph of software evolution**.
+These include:
+
+- Repository creation  
+- Commits (references)  
+- Forks  
+- Issues  
+- Pull requests  
+- Permissions  
+
+Each event is:
+
+- Cryptographically signed  
+- Distributed through relays  
+- Independently verifiable  
+
+Together, they form a **graph of software evolution** — the *Event Git Graph*.
 
 ---
 
 ## 🏗️ Architecture
 
-EGG is composed of three main layers:
-
-### 1. 🗂️ Storage Layer (Pegg)
-
-Repositories are hosted as static files on:
-
-- GitHub Pages
-- Personal servers
-- Local environments
-
-This layer is called **Pegg** — a decentralized, lightweight hosting system.
+EGG is composed of three layers:
 
 ---
 
-### 2. 🌐 Protocol Layer (Nostr)
+### 🗂️ 1. Storage Layer — *Pegg*
 
-Nostr provides:
+Repositories are hosted as static content:
 
-- Identity (public/private keys)
-- Authentication (signatures)
-- Event distribution
-- Social graph
+- GitHub Pages  
+- Personal servers  
+- Local environments  
 
-Users do not create accounts — they use cryptographic keys.
+This layer is called **Pegg**.
+
+#### What is Pegg?
+
+Pegg is:
+
+- A static hosting structure  
+- A repository index  
+- A publishing environment  
+
+It is:
+
+- Lightweight  
+- Serverless  
+- Replicable  
+- Fully independent  
+
+There is **no central Pegg**.
+
+Anyone can run their own.
 
 ---
 
-### 3. 💻 Client Layer (EGG Client)
+### 🌐 2. Protocol Layer — *Nostr*
 
-The EGG Client is the interface where users:
+EGG uses Nostr for:
 
-- Explore repositories
-- Manage projects
-- Contribute to code
-- Interact with other developers
+- Identity (public/private keys)  
+- Authentication (signatures)  
+- Event propagation  
+- Social relationships  
 
-Anyone can build their own client.
+Users do not create accounts.
+
+They use keys.
+
+---
+
+### 💻 3. Client Layer — *EGG Client*
+
+The client is the interface layer.
+
+It enables users to:
+
+- Browse repositories  
+- Manage projects  
+- Contribute code  
+- Publish events  
+
+There is no official mandatory client.
+
+Anyone can build their own.
 
 ---
 
 ## 👤 User Model
 
-EGG replicates the full GitHub-like experience — without centralized accounts.
+EGG replicates a full GitHub-like experience — without centralized accounts.
 
 Each user has:
 
-- Public profile (based on Nostr pubkey)
-- Name, bio, links
-- Repositories
-- Contribution history
-- Followers / following
-- Activity feed
+- Public profile (derived from pubkey)  
+- Name, bio, avatar, links  
+- Repository list  
+- Contribution history  
+- Followers / following  
+- Activity timeline  
 
 All data is:
 
-- Signed by the user
-- Distributed via Nostr
-- Not stored in a central server
+- Signed by the user  
+- Distributed via Nostr  
+- Stored in a decentralized manner  
 
 ---
 
 ## 📦 Repositories
 
-Repositories can be:
+Repositories are independently hosted and referenced.
 
-### 🌍 Public
-- Open to everyone
-- Discoverable via clients
-- Forkable
+### 🌍 Public Repositories
 
-### 🔒 Private
-- Encrypted or access-restricted
-- Shared with selected public keys
-- Controlled by the owner
+- Open to anyone  
+- Discoverable via clients  
+- Forkable without permission  
+
+### 🔒 Private Repositories
+
+- Access restricted by public keys  
+- Optional encryption  
+- Shared selectively  
 
 ---
 
 ## 🔐 Permissions
 
-Access control is managed through:
+Permissions are not server-based.
 
-- Signed events
-- Public key allowlists
-- Local validation
+They are defined by:
+
+- Signed events  
+- Public key lists  
+- Local validation logic  
 
 This enables:
 
-- Selective collaboration
-- Delegated access
-- Shared hosting environments
+- Fine-grained control  
+- Delegated access  
+- Shared hosting environments  
+
+Example:
+
+A user may allow others to publish repositories inside their Pegg.
 
 ---
 
 ## 🍴 Forking & Collaboration
 
-Forks are independent repositories linked to the original via events.
+Forks are independent.
 
-There is no central authority controlling merges or contributions.
+They:
 
-Instead:
+- Reference original repositories  
+- Exist in separate hosting environments  
+- Are linked through events  
 
-- Relationships are tracked via event references
-- Collaboration is peer-to-peer
-- History forms a distributed graph
+There is no central merge authority.
 
----
+Collaboration is:
 
-## 🌐 Pegg (Decentralized Hosting)
-
-**Pegg** is the hosting layer of EGG.
-
-It works similarly to GitHub Pages, but:
-
-- There is no central Pegg
-- Anyone can run their own
-- It is lightweight and static
-
-Example:
-egg.edgarpaula.org/
-├── index.json
-├── users/
-│ └── pubkey/
-│ ├── profile.json
-│ └── repos/
-
+- Peer-to-peer  
+- Event-driven  
+- Graph-based  
 
 ---
 
-## 🥚 Why "EGG"?
+## 🌐 Pegg Structure Example
+/egg
+index.json
+users/
+<pubkey>/
+profile.json
+repos/
+project-a/
+project-b/
 
-The name represents:
 
-- Birth of new ideas
-- Organic growth
-- Decentralized creation
+---
+
+## 🥚 Meaning of EGG
+
+The name **EGG** represents:
+
+- Birth of ideas  
+- Organic growth  
+- Decentralized creation  
 
 Each repository is a seed.  
-Each fork is a new life.  
-Each Pegg is a fertile environment.
+Each fork is a mutation.  
+Each Pegg is an ecosystem.  
 
 ---
 
 ## 🌱 Open Ecosystem
 
-EGG is fully open and extensible.
+EGG is not a closed product.
+
+It is an open protocol and infrastructure.
 
 Developers can:
 
-- Build custom clients
-- Create indexers and search engines
-- Launch marketplaces
-- Develop SaaS on top of Pegg
+- Build custom clients  
+- Create indexing services  
+- Develop marketplaces  
+- Offer hosted Pegg environments  
+- Extend the protocol  
 
 No permission required.
 
@@ -210,50 +273,107 @@ No permission required.
 
 Because EGG is decentralized:
 
-- Projects cannot be easily taken down
-- Identities cannot be banned
-- Data can be replicated across hosts
+- Projects cannot be globally removed  
+- Identities cannot be banned  
+- Data can be mirrored  
+
+The system is resilient by design.
 
 ---
 
 ## ⚠️ Challenges
 
-- UX complexity
-- Event standardization
-- Project discovery
-- Moderation
-- Sync performance
+EGG acknowledges:
 
-These are expected in decentralized systems and will evolve over time.
+- UX complexity  
+- Event standardization  
+- Discoverability  
+- Moderation  
+- Synchronization  
+
+These are part of the evolution of decentralized systems.
 
 ---
 
-## 🔮 Future
+## 🔮 Roadmap
 
-EGG aims to become:
+### Phase 1
+- Protocol definition  
+- Static Pegg structure  
+- Basic repository listing  
 
-- A standard for decentralized code collaboration
-- A Git-native social layer
-- A censorship-resistant development network
+### Phase 2
+- Nostr login integration  
+- Event publishing  
+- Basic client interface  
+
+### Phase 3
+- Full GitHub-like UI  
+- Forks, issues, PRs  
+- Multi-user Pegg support  
+
+### Phase 4
+- Ecosystem tools  
+- Search/indexing  
+- Plugin architecture  
+
+Perfeito — aqui está **toda a parte que você colou, corrigida e totalmente formatada em um único bloco de código** 👇
+
+````markdown id="egg-full-fix"
+---
+
+## 📦 Example Repository Index
+
+```json
+[
+  {
+    "name": "my-project",
+    "url": "/repos/my-project",
+    "visibility": "public"
+  }
+]
+````
+
+---
+
+## 🔌 Example Event (Repository)
+
+```json
+{
+  "kind": 30001,
+  "content": {
+    "name": "my-project",
+    "description": "Example project",
+    "url": "https://example.com/repos/my-project",
+    "visibility": "public"
+  }
+}
+```
 
 ---
 
 ## 📌 Philosophy
 
-> **Don't trust the platform. Be the platform.**
+> Don't trust the platform. Be the platform.
+
+EGG transforms:
+
+* Platforms → Protocols
+* Accounts → Keys
+* Servers → Networks
 
 ---
 
 ## 🤝 Contributing
 
-This project is open to all developers.
+We welcome all contributors.
 
 You can:
 
-- Build clients
-- Improve specs
-- Experiment with Pegg
-- Propose new event types
+* Build a client
+* Propose protocol improvements
+* Create Pegg instances
+* Experiment freely
 
 ---
 
@@ -265,9 +385,17 @@ MIT License
 
 ## 🧡 Final Thought
 
-EGG is not trying to replace GitHub.
+EGG is not trying to replace existing platforms.
 
 It is building something fundamentally different:
 
-A world where developers are sovereign.
+> A world where developers are sovereign.
 
+Where code is free, identity is owned, and collaboration is truly decentralized.
+
+---
+
+<p align="center">
+  <strong>🥚 Let ideas hatch.</strong>
+</p>
+```
