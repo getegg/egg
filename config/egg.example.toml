@@ -1,0 +1,62 @@
+# ─────────────────────────────────────────────
+#  EGG — Event Git Graph
+#  Example configuration file
+#  Copy to config/egg.toml and edit.
+# ─────────────────────────────────────────────
+
+[server]
+# Your public domain
+domain     = "egg.yourdomain.com"
+# Internal port (Nginx proxies to this)
+port       = 3000
+# Your Nostr public key — instance admin
+admin_npub = "npub1..."
+# Instance display name
+name       = "My EGG Instance"
+# Short description shown in discovery
+description = "A self-hosted EGG forge"
+
+[git]
+# Where bare git repos are stored
+repos_path = "/var/egg/repos"
+# SSH port (usually 22)
+ssh_port   = 22
+# System user that owns git repos
+git_user   = "egg"
+# Max repo size in MB (0 = unlimited)
+max_repo_size_mb = 0
+
+[relay]
+# Enable the built-in Nostr relay
+enabled         = true
+# WebSocket port for the relay
+port            = 7777
+# Max simultaneous WebSocket connections
+max_connections = 1000
+# Relay NIP-11 info
+relay_name      = "EGG Relay"
+relay_description = "Built-in relay for EGG forge"
+# Optionally broadcast events to external relays
+broadcast_to    = [
+  # "wss://relay.damus.io",
+  # "wss://nos.lol",
+]
+
+[access]
+# "public"  — anyone can sign in and push public repos
+# "invite"  — only npubs in the allowlist can create repos
+mode = "public"
+# List of npubs allowed to register (used when mode = "invite")
+allowlist = [
+  # "npub1...",
+]
+
+[tls]
+enabled = true
+cert = "/etc/letsencrypt/live/egg.yourdomain.com/fullchain.pem"
+key  = "/etc/letsencrypt/live/egg.yourdomain.com/privkey.pem"
+
+[logging]
+# "debug" | "info" | "warn" | "error"
+level = "info"
+path  = "/var/egg/logs/egg.log"

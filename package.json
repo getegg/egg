@@ -1,0 +1,54 @@
+{
+  "name": "egg",
+  "version": "0.1.0",
+  "description": "Event Git Graph — Decentralized Git forge native to Nostr",
+  "author": "Edgar Paula <edgar@edgarpaula.org>",
+  "license": "MIT",
+  "homepage": "https://egg.edgarpaula.org",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/getegg/egg.git"
+  },
+  "bugs": {
+    "url": "https://github.com/getegg/egg/issues"
+  },
+  "keywords": [
+    "nostr", "git", "decentralized", "self-hosted",
+    "forge", "open-source", "github-alternative"
+  ],
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "main": "server/index.js",
+  "bin": {
+    "egg-cli": "./cli/index.js"
+  },
+  "scripts": {
+    "start":   "node server/index.js",
+    "dev":     "nodemon server/index.js",
+    "relay":   "node relay/index.js",
+    "cli":     "node cli/index.js",
+    "test":    "node --test tests/**/*.test.js",
+    "lint":    "eslint .",
+    "build":   "npm run build:client",
+    "build:client": "cd client && npm run build"
+  },
+  "dependencies": {
+    "@noble/hashes":    "^1.4.0",
+    "@noble/secp256k1": "^2.1.0",
+    "nostr-tools":      "^2.7.0",
+    "ws":               "^8.17.0",
+    "fastify":          "^4.27.0",
+    "@fastify/static":  "^7.0.4",
+    "@fastify/cors":    "^9.0.1",
+    "toml":             "^3.0.0",
+    "simple-git":       "^3.24.0",
+    "nodegit":          "^0.28.0",
+    "better-sqlite3":   "^11.0.0",
+    "pino":             "^9.2.0"
+  },
+  "devDependencies": {
+    "nodemon":          "^3.1.0",
+    "eslint":           "^9.0.0"
+  }
+}
